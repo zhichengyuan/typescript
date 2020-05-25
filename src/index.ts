@@ -1,2 +1,2 @@
-let say:string = "hello";
-console.log(say);
+let say:string = "hello1";
+console.log(say); 
