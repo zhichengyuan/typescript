@@ -62,3 +62,25 @@ tu = ['sds',12];
 let data : any = 'dsdsa';
 
 let num:number = data;
+
+
+
+
+type Gender = '男' | '女'
+type User = {
+    name:string,
+    age:number,
+    gender:"男"|"女"
+}
+
+let p:User
+
+p ={
+    name:'sdsd',
+    age:12,
+    gender:'女'
+}
+
+function getUsers(g:Gender):User[]{
+    return [];
+}
