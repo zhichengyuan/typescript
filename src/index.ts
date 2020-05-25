@@ -1,14 +1,21 @@
-// let say:string = "hello1";
-// say = 333;
-// console.log(say); 
-
-function add(a:number,b:number) {
-    return a+b;
+function isOdd(n:number){
+    return n % 2 === 0
 }
 
-let num = add(1,2);
+// let nums:number[] = [2,3,4];
 
-let name = 'dsds';
-let age;
+let nums:Array<number> = [2,3,4];
 
-console.log(add(1,2));
+let u:object;
+
+u = {};
+
+function printValues(obj:object) {
+    const vals = Object.values(obj);
+    vals.forEach(v => console.log(v));
+}
+
+printValues({
+    name:'tom',
+    age:33
+})
