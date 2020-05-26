@@ -1,4 +1,7 @@
-Object.defineProperty(exports, "__esModule", { value: true });
-const funcs_1 = require("./funcs");
-const deck = funcs_1.createDeck();
-funcs_1.printDeck(deck);
+let u = {
+    id: '123',
+    name: 'sdfs',
+    age: 12
+};
+let arr = [12, 12, 32];
+let arr1 = [2, 3, 4];

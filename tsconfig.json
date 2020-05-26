@@ -8,7 +8,7 @@
     "removeComments": true,//编译结果移除注释
     "noImplicitUseStrict": true,//编译结果不包含严格模式
     "esModuleInterop": true,//启用es模块化交互非es模块导出
-    "noEmitOnError": true,//报错不生成编译结果
+    // "noEmitOnError": true,//报错不生成编译结果
     "moduleResolution": "node",//模块解析的策略
 
 
