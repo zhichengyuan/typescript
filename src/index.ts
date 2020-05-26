@@ -1,3 +1,6 @@
+import {sum,name} from './myModule'
+
+console.log(name);
 enum Permission {
     Read = 1,//0001
     Write = 2,//0010
@@ -33,3 +36,4 @@ console.log(hasPermission(p,Permission.Write));
 p = p ^ Permission.Write
 
 console.log(hasPermission(p,Permission.Write));
+
