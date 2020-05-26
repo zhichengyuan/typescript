@@ -1,17 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const myModule_1 = require("./myModule");
-console.log(myModule_1.name);
-var Permission;
-(function (Permission) {
-    Permission[Permission["Read"] = 1] = "Read";
-    Permission[Permission["Write"] = 2] = "Write";
-    Permission[Permission["Create"] = 4] = "Create";
-    Permission[Permission["Delete"] = 8] = "Delete";
-})(Permission || (Permission = {}));
-let p = Permission.Read | Permission.Write;
-function hasPermission(target, per) {
-    return (target & per) === per;
-}
-console.log(hasPermission(p, Permission.Write));
-p = p ^ Permission.Write;
-console.log(hasPermission(p, Permission.Write));
+const fs_1 = __importDefault(require("fs"));
+fs_1.default.readFileSync('./');
