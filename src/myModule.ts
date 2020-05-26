@@ -1,5 +1,10 @@
-export const name = 'Tom';
+const name = 'Tom';
 
-export function sum (a:number,b:number) {
+function sum (a:number,b:number) {
     return a + b
+}
+
+export = {
+    name,
+    sum
 }
