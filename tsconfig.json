@@ -10,7 +10,7 @@
     "esModuleInterop": true,//启用es模块化交互非es模块导出
     "noEmitOnError": true,//报错不生成编译结果
     "moduleResolution": "node",//模块解析的策略
-
+    "strictPropertyInitialization": true
 
 
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
