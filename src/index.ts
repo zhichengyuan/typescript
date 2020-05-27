@@ -32,5 +32,5 @@ u.publish('文章一');
 u.publish('文章一');
 u.publish('文章一');
 u.publish('文章一');
-u.publish('文章一');
+u.publish('文章一'); 
 
