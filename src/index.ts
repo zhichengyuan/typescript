@@ -1,39 +1,25 @@
-// function take<T>(arr:T[],n:number) : T[] {
-//     if(n>arr.length){
-//         return arr;
-//     }
-//     const newArr:T[] = [];
-//     for(let i = 0;i < n;i++){
-//         newArr.push(arr[i])
-//     }
-//     return newArr;
-// }
-
-import { ArrayHelper } from "./ArrayHelper";
-
-// const result = take<number>([1,3,4,5],2);
-// const result1 = take<string>(['12','wqw','sds'],2);
-
-// const newArr = take([1,3,4,5],2);
-// console.log(newArr);
-
-//回调函数：判断数组中的某一项是否满足条件
-type callback<T> = (n:T,i:number) => boolean;
-
-function filter<T>(arr:T[],callback:callback<T>) : T[] {
-    const newArr:T[] = [];
-    arr.forEach((n,i) => {
-        if(callback(n,i)){
-            newArr.push(n);
-        }
-    })
-    return newArr;
+interface hasNameProperty {
+    name:string
 }
 
-const arr = [3,4,5,6,4];
+/**
+ * 将某个对象的name属性的每个单词的首字母大小，然后将该对象返回
+ */
 
-console.log(filter(arr,n => n %2 !==0))
+ function nameToUpperCase<T extends hasNameProperty>(obj:T):T {
+     obj.name = obj.name
+                .split(" ")
+                .map(s => s[0].toUpperCase() + s.substr(1))
+                .join(" ");
+    return obj;
+ }
 
-const helper = new ArrayHelper(['S','W']);
-helper.shuffle();
-// helper.take();
+ const o = {
+     name:"kevin yuan",
+     age:22,
+     genden:"男"
+ }
+
+ let newO = nameToUpperCase(o);
+
+ console.log(newO.name);
