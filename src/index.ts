@@ -1,31 +1,26 @@
-import { Animal, Lion, Tiger, Monkey, Dog } from "./animals";
-import {hasFireShow, hasWisdomShow } from "./interfaces";
+// class User {
+//     [prop:string]:any
+//     constructor (
+//         public name:string,
+//         public age:number
+//     ) {}
 
-const animals:Animal[] = [
-    new Lion('王富贵',12),
-    new Tiger('坤坤',13),
-    new Monkey('小刘',14),
-    new Dog('旺财',18),
-    new Dog('王d贵',12),
+//     sayHello(){
+
+//     }
+// }
+
+// const u = new User('tom',12);
+// u.pid = 'sdsd';
+
+
+class MyArray {
+    [index:number]:string
+    0 = '1'
+    2 = 'sdsd'
+    3 = 'fgfg'
     
-]
+}
 
-// 1.所有动物打招呼
-
-// animals.forEach(u => {
-//     u.sayHello();
-// })
-
-
-
-animals.forEach(a => {
-    if(hasFireShow(a)) {
-        a.singleFire();
-        a.doubleFire();
-    }
-    if(hasWisdomShow(a)) {
-        a.dance();
-        a.suanshuti();
-    }
-})
-
+const my = new MyArray();
+my[4] = "2"
