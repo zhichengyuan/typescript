@@ -1,43 +1,21 @@
-class User {
-    constructor(name, _age, gender = '男') {
-        this.name = name;
-        this._age = _age;
-        this.gender = gender;
-        this._publishNumber = 3;
-        this._curNumber = 0;
-        this.id = Math.random();
+Object.defineProperty(exports, "__esModule", { value: true });
+const animals_1 = require("./animals");
+const animals = [
+    new animals_1.Lion('王富贵', 12),
+    new animals_1.Tiger('坤坤', 13),
+    new animals_1.Monkey('小刘', 14),
+    new animals_1.Dog('旺财', 18),
+    new animals_1.Dog('王d贵', 12),
+];
+function hasFireShow(ani) {
+    if (ani.singleFire && ani.doubleFire) {
+        return true;
     }
-    set age(value) {
-        if (value < 0) {
-            this._age = 0;
-        }
-        else if (value > 200) {
-            this._age = 200;
-        }
-        else {
-            this._age = Math.floor(value);
-        }
-    }
-    get age() {
-        return this._age;
-    }
-    publish(title) {
-        if (this._curNumber < this._publishNumber) {
-            console.log('发布一篇文章' + title);
-            this._curNumber++;
-        }
-        else {
-            console.log('今日发布文章以达到上限');
-        }
-    }
+    return false;
 }
-const u = new User("aa", 2);
-u.age = 15.2;
-console.log(u.age);
-u.publish('文章一');
-u.publish('文章一');
-u.publish('文章一');
-u.publish('文章一');
-u.publish('文章一');
-u.publish('文章一');
-u.publish('文章一');
+animals.forEach(a => {
+    if (hasFireShow(a)) {
+        a.singleFire();
+        a.doubleFire();
+    }
+});
