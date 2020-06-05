@@ -1,26 +1,17 @@
-// class User {
-//     [prop:string]:any
-//     constructor (
-//         public name:string,
-//         public age:number
-//     ) {}
-
-//     sayHello(){
-
-//     }
-// }
-
-// const u = new User('tom',12);
-// u.pid = 'sdsd';
-
-
-class MyArray {
-    [index:number]:string
-    0 = '1'
-    2 = 'sdsd'
-    3 = 'fgfg'
-    
+interface IUser {
+    name:string
+    age:number
+    sayHello(this:IUser):void
 }
 
-const my = new MyArray();
-my[4] = "2"
+const u:IUser = {
+    name:"ssf",
+    age:33,
+    sayHello(){
+        console.log(this.name,this.age)
+    }
+}
+
+const say = u.sayHello;
+
+// say()
