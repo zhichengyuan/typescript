@@ -1,44 +1,47 @@
-// function test(target:new (...args:any[]) => object) {
-//     console.log(target);
-// } 
-
-// @test
-// class A {
-//     prop1:string = '1';
-//     constructor(public prop2:string){}
-// }
-
-// function test(str:string) {
-//     return function (target:new (...args:any[]) => object) {
-//         console.log(target);
-//     } 
-// }
-
-// @test('这是一个类')
-// class A {
-//     prop1:string = '1';
-//     constructor(public prop2:string){}
-// }
-
-
-type constructor = new (...args:any[]) => object;
-
-function d1() {
-    console.log('d1');
-    return function (target:constructor) {
-        console.log('d1 decorator')
+function d(target:any,key:string) {
+    console.log(target,key);
+    // console.log(target === A.prototype,key);
+    if(!target.__props){
+        target.__props = []
     }
+    target.__props.push(key);
 }
-function d2() {
-    console.log('d2');
-    return function (target:constructor) {
-        console.log('d2 decorator')
+
+
+function enumerable (target:any,key:string,descriptor:PropertyDescriptor) {
+    descriptor.enumerable = true
+}
+
+function useless(target:any,key:string,descriptor:PropertyDescriptor) {
+    descriptor.value = function () {
+        console.warn(key + '方法已过期');
     }
 }
 
-@d1()
-@d2()
 
 class A {
-    prop1:string = 'ds'
+    @d
+    prop1:string
+
+    @d
+    static prop2:string
+
+    @enumerable
+    @useless
+    method1(){
+        console.log('method1');
+    }
+    @enumerable
+    method2(){
+
+    }
 }
+
+// console.log((A.prototype as any).__props);
+
+const a = new A();
+// console.log((a as any).__props);
+for (const key in a) {
+    console.log('===' + key);
+}
+a.method1();
