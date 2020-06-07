@@ -1,21 +1,19 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const animals_1 = require("./animals");
-const animals = [
-    new animals_1.Lion('王富贵', 12),
-    new animals_1.Tiger('坤坤', 13),
-    new animals_1.Monkey('小刘', 14),
-    new animals_1.Dog('旺财', 18),
-    new animals_1.Dog('王d贵', 12),
-];
-function hasFireShow(ani) {
-    if (ani.singleFire && ani.doubleFire) {
-        return true;
+require("reflect-metadata");
+let User = (() => {
+    class User {
     }
-    return false;
-}
-animals.forEach(a => {
-    if (hasFireShow(a)) {
-        a.singleFire();
-        a.doubleFire();
-    }
-});
+    __decorate([
+        Reflect.metadata("a", "b")
+    ], User.prototype, "loginId", void 0);
+    __decorate([
+        Reflect.metadata("a", "b")
+    ], User.prototype, "age", void 0);
+    return User;
+})();
